@@ -1,0 +1,56 @@
+File has been saved succesfully: 2022-09-26 14:09:32
+Number of Entries Scraped: 9523
+
+File has been saved succesfully: 2022-09-27 11:40:41
+Number of Entries Scraped: 9513
+
+File has been saved succesfully: 2022-09-28 12:53:19
+Number of Entries Scraped: 9522
+
+File has been saved succesfully: 2022-09-29 14:19:40
+Number of Entries Scraped: 9542
+
+File has been saved succesfully: 2022-09-30 13:45:23
+Number of Entries Scraped: 9540
+
+File has been saved succesfully: 2022-10-01 11:55:31
+Number of Entries Scraped: 9554
+
+File has been saved succesfully: 2022-10-02 14:51:12
+Number of Entries Scraped: 9554
+
+File has been saved succesfully: 2022-10-03 10:52:23
+Number of Entries Scraped: 9552
+
+File has been saved succesfully: 2022-10-04 10:22:37
+Number of Entries Scraped: 9549
+
+File has been saved succesfully: 2022-10-05 17:51:33
+Number of Entries Scraped: 9567
+
+File has been saved succesfully: 2022-10-06 11:18:26
+Number of Entries Scraped: 9552
+
+File has been saved succesfully: 2022-10-07 10:27:06
+Number of Entries Scraped: 9645
+
+File has been saved succesfully: 2022-10-08 10:51:13
+Number of Entries Scraped: 9545
+
+File has been saved succesfully: 2022-10-09 14:04:53
+Number of Entries Scraped: 9531
+
+File has been saved succesfully: 2022-10-10 11:28:45
+Number of Entries Scraped: 9542
+
+File has been saved succesfully: 2022-10-11 10:00:55
+Number of Entries Scraped: 9529
+
+File has been saved succesfully: 2022-10-12 23:53:51
+Number of Entries Scraped: 10000
+
+File has been saved succesfully: 2022-10-13 11:52:15
+Number of Entries Scraped: 8298
+
+File has been saved succesfully: 2022-10-14 10:02:20
+Number of Entries Scraped: 10000
