@@ -18,10 +18,10 @@ options.headless = True
 options.add_argument("--window-size=1920,1200")
 
 #  initializes HEADLESS Chrome webdriver (COMMENT WHEN DEBUGGING)
-driver = webdriver.Chrome(options=options, service=Service(driver_path))
+# driver = webdriver.Chrome(options=options, service=Service(driver_path))
 
 #  initializes Chrome webdriver (UNCOMMENT WHEN DEBUGGING)
-# driver = webdriver.Chrome(service=Service(driver_path))
+driver = webdriver.Chrome(service=Service(driver_path))
 
 #  get page's URL
 driver.get(url)
