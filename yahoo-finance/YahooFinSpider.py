@@ -7,7 +7,7 @@ import os
 import pandas as pd
 
 #  URL for Yahoo Finance
-url = "https://finance.yahoo.com/cryptocurrencies?count=100"
+url = "https://finance.yahoo.com/crypto/?offset=0&count=100"
 
 #  calls locally installed chromedriver.exe
 driver_path = os.getenv("WEBDRIVER") + "\chromedriver.exe"
@@ -18,10 +18,10 @@ options.headless = True
 options.add_argument("--window-size=1920,1200")
 
 #  initializes HEADLESS Chrome webdriver (COMMENT WHEN DEBUGGING)
-driver = webdriver.Chrome(options=options, service=Service(driver_path))
+# driver = webdriver.Chrome(options=options, service=Service(driver_path))
 
 #  initializes Chrome webdriver (UNCOMMENT WHEN DEBUGGING)
-# driver = webdriver.Chrome(service=Service(driver_path))
+driver = webdriver.Chrome(service=Service(driver_path))
 
 #  get page's URL
 driver.get(url)
