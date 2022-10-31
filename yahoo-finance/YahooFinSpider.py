@@ -61,10 +61,12 @@ while True:
     driver.implicitly_wait(15)
 
     #  scrape entire table
+    print("Extracting data table from the site")
     table = driver.find_elements(By.XPATH, "//tbody/tr")
 
     try:
         #  scrape specific features per row
+        print("Extracting data from the table")
         for row in table:
             date_scraped = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             symbol = row.find_element(By.XPATH, ".//td[@aria-label='Symbol']").text
@@ -120,13 +122,13 @@ while True:
             nxt_button.click()
             print(f"Page {page_num} done")
         except:
-            print("No more pages (1)")
+            print("No more pages (Exit 2)")
             break
     except:
-        print("No more pages (2)")
+        print("No more pages (Exit 1)")
         break
 
-#  log the date and time scraping was finished
+ #  log the date and time scraping was finished
 scraped_date = dt.datetime.now()
 print(f"Finished scraping: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}")
 
@@ -138,20 +140,25 @@ crypto_df = pd.DataFrame(crypto_dict)
 
 print(f"Number of Entries Scraped: {crypto_df.shape[0]}")
 
-file_name = f"crypto\{scraped_date.strftime('%Y-%m-%d')}_cryptocurrency.csv"
-crypto_df.to_csv(file_name)
+#  check if spider actually scraped data
+if crypto_df.shape[0] != 0:
 
-#  confirm if the current file has actually been saved in the folder
-#  also log scraping activities to log.txt (feature as of 25 September 2022)
-log = open("log.txt", "a")
+    file_name = f"crypto\{scraped_date.strftime('%Y-%m-%d')}_cryptocurrency.csv"
+    crypto_df.to_csv(file_name)
 
-if os.path.isfile(file_name):
-    print("File has been saved successfully.")
-    log.write(
-        f"File has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
-    )
-    log.close()
-else:
-    print("File does not exist.")
-    log.write("Unable to save file.\n")
-    log.close()
+    #  confirm if the current file has actually been saved in the folder
+    #  also log scraping activities to log.txt (feature as of 25 September 2022)
+    log = open("log.txt", "a")
+
+    if os.path.isfile(file_name):
+        print("File has been saved successfully.")
+        log.write(
+            f"File has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
+        )
+        log.close()
+    else:
+        print("File does not exist.")
+        log.write("Unable to save file.\n")
+        log.close()
+
+print("No Data Scraped")
