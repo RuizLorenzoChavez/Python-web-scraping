@@ -13,15 +13,15 @@ url = "https://finance.yahoo.com/crypto/?offset=0&count=100"
 driver_path = os.getenv("WEBDRIVER") + "\chromedriver.exe"
 
 #  enables headless mode
-# options = Options()
-# options.headless = True
-# options.add_argument("--window-size=1920,1200")
+options = Options()
+options.headless = True
+options.add_argument("--window-size=1920,1200")
 
 #  initializes HEADLESS Chrome webdriver (COMMENT WHEN DEBUGGING)
-# driver = webdriver.Chrome(options=options, service=Service(driver_path))
+driver = webdriver.Chrome(options=options, service=Service(driver_path))
 
 #  initializes Chrome webdriver (UNCOMMENT WHEN DEBUGGING)
-driver = webdriver.Chrome(service=Service(driver_path))
+# driver = webdriver.Chrome(service=Service(driver_path))
 
 #  get page's URL
 driver.get(url)
