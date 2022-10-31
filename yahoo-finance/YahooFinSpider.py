@@ -161,4 +161,5 @@ if crypto_df.shape[0] != 0:
         log.write("Unable to save file.\n")
         log.close()
 
+#  if the spider did not actually collect any data
 print("No Data Scraped")
