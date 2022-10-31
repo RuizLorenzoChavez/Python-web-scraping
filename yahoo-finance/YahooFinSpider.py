@@ -110,6 +110,8 @@ while True:
             #  append scraped data from to the dictionary
             for feats, var in zip(features, var_features):
                 crypto_dict[feats].append(var)
+        
+        print(table)
 
         #  allows indefinite page traversal (one-way)
         try:
@@ -155,3 +157,4 @@ else:
     print("File does not exist.")
     log.write("Unable to save file.\n")
     log.close()
+
