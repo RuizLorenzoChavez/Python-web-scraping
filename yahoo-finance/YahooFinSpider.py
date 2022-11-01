@@ -69,7 +69,7 @@ while True:
 
     try:
         #  scrape specific features per row
-        print(f"Extracting data from the table {page_num}")
+        print(f"Extracting data from table {page_num}")
         for row in table:
             date_scraped = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             symbol = row.find_element(By.XPATH, ".//td[@aria-label='Symbol']").text
@@ -111,8 +111,6 @@ while True:
                 total_vol,
                 circ_supply,
             ]
-
-            print("Compiling data into a dictionary")
 
             #  append scraped data from to the dictionary
             for feats, var in zip(features, var_features):
