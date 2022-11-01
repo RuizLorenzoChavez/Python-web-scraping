@@ -6,6 +6,8 @@ import datetime as dt
 import os
 import pandas as pd
 
+print("Initializing YahooFinSpider")
+
 #  URL for Yahoo Finance
 url = "https://finance.yahoo.com/crypto/?offset=0&count=100"
 
@@ -16,6 +18,7 @@ driver_path = os.getenv("WEBDRIVER") + "\chromedriver.exe"
 options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 #  initializes HEADLESS Chrome webdriver (COMMENT WHEN DEBUGGING)
 driver = webdriver.Chrome(options=options, service=Service(driver_path))
@@ -61,12 +64,12 @@ while True:
     driver.implicitly_wait(15)
 
     #  scrape entire table
-    print("Extracting data table from the site")
+    print(f"Extracting data table {page_num} from the site")
     table = driver.find_elements(By.XPATH, "//tbody/tr")
 
     try:
         #  scrape specific features per row
-        print("Extracting data from the table")
+        print(f"Extracting data from the table {page_num}")
         for row in table:
             date_scraped = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             symbol = row.find_element(By.XPATH, ".//td[@aria-label='Symbol']").text
@@ -109,6 +112,8 @@ while True:
                 circ_supply,
             ]
 
+            print("Compiling data into a dictionary")
+
             #  append scraped data from to the dictionary
             for feats, var in zip(features, var_features):
                 crypto_dict[feats].append(var)
@@ -128,7 +133,7 @@ while True:
         print("No more pages (Exit 1)")
         break
 
- #  log the date and time scraping was finished
+#  log the date and time scraping was finished
 scraped_date = dt.datetime.now()
 print(f"Finished scraping: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}")
 
