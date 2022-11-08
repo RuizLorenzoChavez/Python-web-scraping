@@ -87,3 +87,27 @@ Number of Entries Scraped: 9524
 
 File has been saved succesfully: 2022-10-31 11:49:16
 Number of Entries Scraped: 9517
+
+File has been saved succesfully: 2022-11-01 13:16:38
+Number of Entries Scraped: 9508
+
+File has been saved succesfully: 2022-11-02 12:54:03
+Number of Entries Scraped: 9504
+
+File has been saved succesfully: 2022-11-04 00:15:51
+Number of Entries Scraped: 9503
+
+File has been saved succesfully: 2022-11-04 11:26:28
+Number of Entries Scraped: 9493
+
+File has been saved succesfully: 2022-11-05 11:45:33
+Number of Entries Scraped: 9483
+
+File has been saved succesfully: 2022-11-06 13:45:48
+Number of Entries Scraped: 9488
+
+File has been saved succesfully: 2022-11-07 08:46:55
+Number of Entries Scraped: 9477
+
+File has been saved succesfully: 2022-11-08 18:35:02
+Number of Entries Scraped: 9400
