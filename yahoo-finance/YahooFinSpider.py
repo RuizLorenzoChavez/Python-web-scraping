@@ -143,26 +143,25 @@ crypto_df = pd.DataFrame(crypto_dict)
 
 print(f"Number of Entries Scraped: {crypto_df.shape[0]}")
 
-#  check if spider actually scraped data
-if crypto_df.shape[0] != 0:
+#  check if spider did not scrape data
+if crypto_df.shape[0] == 0:
+    print("No Data Scraped")
 
-    file_name = f"crypto\{scraped_date.strftime('%Y-%m-%d')}_cryptocurrency.csv"
-    crypto_df.to_csv(file_name)
+#  if the spider did actually collect data
+file_name = f"crypto\{scraped_date.strftime('%Y-%m-%d')}_cryptocurrency.csv"
+crypto_df.to_csv(file_name)
 
-    #  confirm if the current file has actually been saved in the folder
-    #  also log scraping activities to log.txt (feature as of 25 September 2022)
-    log = open("log.txt", "a")
+#  confirm if the current file has actually been saved in the folder
+#  also log scraping activities to log.txt (feature as of 25 September 2022)
+log = open("log.txt", "a")
 
-    if os.path.isfile(file_name):
-        print("File has been saved successfully.")
-        log.write(
-            f"File has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
+if os.path.isfile(file_name):
+    print("File has been saved successfully.")
+    log.write(
+        f"File has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
         )
-        log.close()
-    else:
-        print("File does not exist.")
-        log.write("Unable to save file.\n")
-        log.close()
-
-#  if the spider did not actually collect any data
-print("No Data Scraped")
+    log.close()
+else:
+    print("File does not exist.")
+    log.write("Unable to save file.\n")
+    log.close()
