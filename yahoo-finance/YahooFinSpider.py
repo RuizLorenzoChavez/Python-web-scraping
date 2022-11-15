@@ -54,6 +54,8 @@ crypto_dict = {}
 for feature in features:
     crypto_dict[feature] = []
 
+#  TODO: Make this into a function so that it can be automatically iterated whenever the spider does not reach the target
+
 while True:
 
     #  track how many pages have been scraped
@@ -153,10 +155,11 @@ if crypto_df.shape[0] != 0:
     #  also log scraping activities to log.txt (feature as of 25 September 2022)
     log = open("log.txt", "a")
 
+    # TODO: evaluate the necessity of this if statement
     if os.path.isfile(file_name):
         print("File has been saved successfully.")
         log.write(
-            f"File has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
+            f"\nFile has been saved succesfully: {scraped_date.strftime('%Y-%m-%d %H:%M:%S')}\nNumber of Entries Scraped: {crypto_df.shape[0]}\n "
             )
         log.close()
     else:
